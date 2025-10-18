@@ -76,6 +76,7 @@
 
 import React, { useContext } from "react";
 import { ThemeContext } from "./themeContext";
+import { Link } from "react-router-dom";
 
 function Header() {
   const { isDark, toggleTheme } = useContext(ThemeContext);
@@ -93,11 +94,12 @@ function Header() {
       }`}
     >
       <div className="container-fluid">
-        <div className="navbar-brand d-flex flex-column me-4">
+        <Link to = "/">
+        <div className="navbar-brand d-flex flex-column me-4" >
           <h4 className="mb-0">UniLearn</h4>
           <h6 className="">By PDPU</h6>
         </div>
-
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -129,9 +131,12 @@ function Header() {
           </form>
 
           <div className="d-flex align-items-center flex-wrap mt-2 mt-lg-0">
+            <Link to = "/cart">
             <button className="btn me-2 mb-2 mb-lg-0" style={btnStyle}>
-              Cart
-            </button>
+            Cart
+
+          </button>
+            </Link>
             <button className="btn me-2 mb-2 mb-lg-0" style={btnStyle}>
               Wishlist
             </button>

@@ -1,11 +1,10 @@
 import React from 'react';
 
-function HomePage() {
+function WishList() {
     return ( 
         <>
-        
         </>
      );
 }
 
-export default HomePage;
+export default WishList;
