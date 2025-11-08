@@ -10,7 +10,7 @@
 //               <h4 className="mb-0">UniLearn</h4>
 //               <small className="text-muted">By PDPU</small>
 //             </a>
-  
+
 //             {/* Hamburger Button */}
 //             <button
 //               className="navbar-toggler"
@@ -23,7 +23,7 @@
 //             >
 //               <span className="navbar-toggler-icon"></span>
 //             </button>
-  
+
 //             {/* Collapsible Content */}
 //             <div className="collapse navbar-collapse" id="navbarContent">
 //               {/* My Learning */}
@@ -34,7 +34,7 @@
 //                   </a>
 //                 </li>
 //               </ul>
-  
+
 //               {/* Search Bar */}
 //               <form className="d-flex flex-grow-1 mx-4 my-2 my-lg-0">
 //                 <input
@@ -43,7 +43,7 @@
 //                   placeholder="Search"
 //                 />
 //               </form>
-  
+
 //               {/* Right Section: Buttons */}
 //               <div className="d-flex align-items-center flex-wrap mt-2 mt-lg-0">
 //                 <button className="btn btn-dark me-2 mb-2 mb-lg-0">
@@ -61,7 +61,7 @@
 //                 <button className="btn btn-dark me-3 mb-2 mb-lg-0">
 //                   Light/Dark Mode
 //                 </button>
-  
+
 //                 {/* Profile Circle */}
 //                 <button className="btn btn-dark rounded-circle">A</button>
 //               </div>
@@ -71,7 +71,7 @@
 //       </>
 //     );
 //   }
-  
+
 //   export default Header;
 
 import React, { useContext } from "react";
@@ -89,16 +89,15 @@ function Header() {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg sticky-top px-3 ${
-        isDark ? "navbar-dark bg-dark" : "navbar-light bg-light"
-      }`}
+      className={`navbar navbar-expand-lg sticky-top px-3 ${isDark ? "navbar-dark bg-dark" : "navbar-light bg-light"
+        }`}
     >
       <div className="container-fluid">
-        <Link to = "/" style={{ textDecoration: 'none' }}>
-        <div className="navbar-brand d-flex flex-column me-4">
-          <h4 className="mb-0">UniLearn</h4>
-          <h6 className="">By PDPU</h6>
-        </div>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <div className="navbar-brand d-flex flex-column me-4">
+            <h4 className="mb-0">UniLearn</h4>
+            <h6 className="">By PDPU</h6>
+          </div>
         </Link>
         <button
           className="navbar-toggler"
@@ -131,21 +130,26 @@ function Header() {
           </form>
 
           <div className="d-flex align-items-center flex-wrap mt-2 mt-lg-0">
-            <Link to = "/cart">
-            <button className="btn me-2 mb-2 mb-lg-0" style={btnStyle}>
-            Cart
-
-          </button>
+            <Link to="/cart">
+              <button className="btn me-2 mb-2 mb-lg-0" style={btnStyle}>
+                Cart
+              </button>
             </Link>
+            <Link to="/WishList">
+              <button className="btn me-2 mb-2 mb-lg-0" style={btnStyle}>
+                Wishlist
+              </button>
+            </Link>
+            <Link to="/LogIn">
             <button className="btn me-2 mb-2 mb-lg-0" style={btnStyle}>
-              Wishlist
+              LOGIN
             </button>
-            <button className="btn me-2 mb-2 mb-lg-0" style={btnStyle}>
-              LOG IN
-            </button>
-            <button className="btn me-2 mb-2 mb-lg-0" style={btnStyle}>
-              SIGN UP
-            </button>
+            </Link>
+            <Link to="/SignUp">
+              <button className="btn me-2 mb-2 mb-lg-0" style={btnStyle}>
+                SIGN UP
+              </button>
+            </Link>
             <button
               className="btn me-3 mb-2 mb-lg-0"
               onClick={toggleTheme}
