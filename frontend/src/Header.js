@@ -93,7 +93,7 @@ function Header() {
         }`}
     >
       <div className="container-fluid">
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <Link to="/home" style={{ textDecoration: 'none' }}>
           <div className="navbar-brand d-flex flex-column me-4">
             <h4 className="mb-0">UniLearn</h4>
             <h6 className="">By PDPU</h6>

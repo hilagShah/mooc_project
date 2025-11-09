@@ -11,11 +11,15 @@ function LogIn() {
         axios.post('http://localhost:3001/Login', {Email, Password})  
         .then((response) => {
         console.log(response.data);
+        window.location.href = '/home';
         })  .catch((error) => {
           console.error('There was an error!', error);
         });
         console.log({ Email, Password });
+
       }
+      // this page will direct to home page after login successfull
+
     return (
         <div className="container d-flex justify-content-center align-items-center vh-100">
       <div className="card shadow-lg p-4 rounded-4" style={{ maxWidth: '400px', width: '100%' }}>
