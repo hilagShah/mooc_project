@@ -1,11 +1,30 @@
 import React from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 
 function SignUp() {
+  const [Name, setFullName] = useState('');
+  const [Email, setEmail] = useState('');
+  const [Password, setPassword] = useState('');
+  const [ConfirmPassword, setConfirmPassword] = useState('');
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    // Handle form submission logic here
+    axios.post('http://localhost:3001/UserEntries', {Name, Email, Password,ConfirmPassword})  
+    .then((response) => {
+    console.log(response.data);
+    })  .catch((error) => {
+      console.error('There was an error!', error);
+    });
+    console.log({ Name, Email, Password, ConfirmPassword });
+  }
+
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
       <div className="card shadow-lg p-4 rounded-4" style={{ maxWidth: '400px', width: '100%' }}>
         <h3 className="text-center mb-4">Sign Up</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
           {/* Name */}
           <div className="mb-3">
             <label htmlFor="name" className="form-label">Full Name</label>
@@ -15,6 +34,7 @@ function SignUp() {
               id="name"
               placeholder="Enter your full name"
               required
+              onChange={(e) => setFullName(e.target.value)}
             />
           </div>
 
@@ -27,6 +47,7 @@ function SignUp() {
               id="email"
               placeholder="Enter your email"
               required
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -39,6 +60,7 @@ function SignUp() {
               id="password"
               placeholder="Enter your password"
               required
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
@@ -51,6 +73,7 @@ function SignUp() {
               id="confirmPassword"
               placeholder="Re-enter your password"
               required
+              onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
 
